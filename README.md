@@ -6,7 +6,7 @@
 ___
 ### How it works:
 | command       | purpose                                                        |           
-| :------------ |:--------------------------------------------------------------:|
+| :------------ |---------------------------------------------------------------:|
 |`-h`           |Getting a Description of the commands and how to use them       |
 |`-i`           |Read other File than data.bin                                   |
 |`-o`           |Export File under Filename as a Markdown                        |
