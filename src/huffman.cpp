@@ -1,7 +1,10 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 #include <fstream>
+#include <algorithm>
+#include <cmath>
 #pragma once
 
 // HOWTO -> compile with std 17
@@ -116,8 +119,6 @@ private:
     Node<char> start;                                // Der Star der Show : der Binary Tree
     std::vector<std::pair<char, unsigned int>> vec;  // Der Vector der die Anzahl der Sequenzen beinhaltet
     std::vector<std::pair<char, std::string>> table; // Die Vector der die Tabelle von Chars und die Stelle im Vec Beinhaltet
-    std::ifstream file;
-    std::ofstream compressed;
     // functions
     std::vector<std::pair<char, unsigned int>>::iterator search(char search) // Die funktion Findet den Char im Vector,zählt ihn hoch oder erstellt ihn neu
     {
@@ -172,7 +173,6 @@ public:
         size_t count = 0;
         vec.reserve(25);
 
-        file.flags(std::ifstream::binary);
 
         if (!file.good())
         {
@@ -232,8 +232,6 @@ public:
     {
         // std::ofstream hexin ("hexin.txt"); //DEBUG-Hex
         clean();
-        file.flags(std::istream::binary);
-        compressed.flags(std::ostream::binary);
         readFile(file);
 
         if (vec.size() < 2 && table.size() < 2 && !file.eof())
@@ -297,8 +295,6 @@ public:
         // std::ofstream hexout ("hexout.txt"); // DEBUG HEX
         // std::ifstream file (filename, std::ios::binary);
         // std::ofstream output(outname, std::ios::binary);
-        file.flags(std::istream::binary);
-        output.flags(std::istream::binary);
 
         int entries = 0;
         file.read((char *)&entries, sizeof(entries));

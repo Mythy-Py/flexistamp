@@ -1,7 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <filesystem>
-#include <iomanip>
 #include "glzt.cpp"
 #include "handler.cpp"
 

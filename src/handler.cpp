@@ -1,6 +1,6 @@
+#include <filesystem>
 #include "glzt.cpp"
 #include "huffman.cpp"
-#include <filesystem>
 #pragma once
 
 class Konsole
@@ -17,7 +17,6 @@ private:
     };
 
     uint16_t flags;
-    const std::string path;
     std::string Inputpath;
     std::string Outputpath;
     Gleitzeit *gleitzeit;
@@ -46,7 +45,7 @@ public:
     }
 };
 
-Konsole::Konsole(const std::vector<std::string> &args) : path(std::filesystem::current_path()), gleitzeit(nullptr), summe(0)
+Konsole::Konsole(const std::vector<std::string> &args) : gleitzeit(nullptr), summe(0)
 {
     genFlags(args);
 
