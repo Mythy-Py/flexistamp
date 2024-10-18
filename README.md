@@ -4,7 +4,7 @@
     Getting easy track of your Flextime
 
 ___
-###How it works:
+### How it works:
 | command       | purpose                                                        |           
 | :------------ |:--------------------------------------------------------------:|
 |`-h`           |Getting a Description of the commands and how to use them       |
