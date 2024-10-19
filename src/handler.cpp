@@ -45,13 +45,14 @@ public:
     }
 };
 
-Konsole::Konsole(const std::vector<std::string> &args) : gleitzeit(nullptr), summe(0)
+Konsole::Konsole(const std::vector<std::string> &args) : gleitzeit(nullptr), summe(0), flags(0)
 {
     genFlags(args);
 
     if (flags & START && flags & END)
     {
-        std::cerr << "\n!!!!!Du versuchst Arbeitsstart und ArbeiworkEnde gleichzeitig einzutragen...!!!!!\nAbbruch\n";
+        std::cout << "Flags hat folgenden Wert: " << std::hex << flags << "\n";
+        std::cerr << "\n!!!!!Du versuchst Arbeitsstart und Arbeitsende gleichzeitig einzutragen...!!!!!\nAbbruch\n";
         std::abort();
     }
 }
