@@ -1,4 +1,4 @@
-# Prerequisites
+j# Prerequisites
 *.d
 
 # Compiled Object files
@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+#My Custom Files
+bin
+src
+CMakeFiles
+*.cmake
+CMakeCache.txt
+compile_commands.json
+Makefile
+build
