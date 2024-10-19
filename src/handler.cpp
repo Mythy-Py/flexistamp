@@ -71,7 +71,7 @@ void Konsole::log(const std::string &message) const
 
 void Konsole::genFlags(const std::vector<std::string> &args)
 {
-    for (auto it = args.begin()+1; it != args.end(); ++it)
+    for (auto it = args.begin(); it != args.end(); ++it)
     {
         if (*it == "-v")
             flags |= VERBOSE;
@@ -94,7 +94,7 @@ void Konsole::genFlags(const std::vector<std::string> &args)
         else if (*it == "-o" && (it + 1 != args.end()))
             Outputpath = *(++it);
 
-        else 
+        else if (*it == "-h") 
             flags |= HELP;
     }
 }
